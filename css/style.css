@@ -1,1075 +1,218 @@
-/* =====================================================
-   SERVING NORTH LONDON METROPOLITAN POLICE WEBSITE
-   MAIN STYLESHEET
-   ===================================================== */
-
-
 /* RESET */
-
 *{
-
 margin:0;
 padding:0;
 box-sizing:border-box;
-
-font-family:
-"Segoe UI",
-Arial,
-sans-serif;
-
+font-family:"Segoe UI", Arial, sans-serif;
 }
 
-
-
-html{
-
-scroll-behavior:smooth;
-
-}
-
-
-
-body{
-
-background:#050a12;
-
-color:white;
-
-overflow-x:hidden;
-
-animation:fadePage .8s ease;
-
-
-}
-
-
-
-/* PAGE LOAD */
-
-@keyframes fadePage{
-
-
-from{
-
-opacity:0;
-
-transform:translateY(15px);
-
-}
-
-
-to{
-
-opacity:1;
-
-transform:translateY(0);
-
-}
-
-
-}
-
-
-
-
-
-/* =====================================================
-   NAVIGATION
-   ===================================================== */
-
-
-header{
-
-
-position:fixed;
-
-
-top:0;
-
-left:0;
-
-
+html, body{
 width:100%;
+overflow-x:hidden;
+scroll-behavior:smooth;
+background:#050a12;
+color:#fff;
+}
 
-
+/* HEADER */
+.header{
+position:fixed;
+top:0;
+left:0;
+width:100%;
 height:90px;
 
+display:flex;
+align-items:center;
+justify-content:space-between;
 
-background:
+padding:0 5%;
 
-rgba(0,0,0,.72);
-
-
-backdrop-filter:
-
-blur(18px);
-
-
-
-border-bottom:
-
-1px solid rgba(255,255,255,.12);
-
-
+background:rgba(0,0,0,.72);
+backdrop-filter:blur(18px);
+border-bottom:1px solid rgba(255,255,255,.12);
 
 z-index:999;
-
-
 }
 
-
-
-/* LOGO LEFT */
-
-.logo{
-
-
-position:absolute;
-
-
-left:50px;
-
-
-top:50%;
-
-
-transform:translateY(-50%);
-
-
-}
-
-
-
+/* LOGO */
 .logo img{
-
-
-height:70px;
-
-
-transition:.4s;
-
-
+height:60px;
+transition:.3s;
 }
-
-
 
 .logo img:hover{
-
-
-transform:scale(1.1);
-
-
+transform:scale(1.08);
 }
 
-
-
-/* NAV CENTRE */
-
-nav{
-
-
-position:absolute;
-
-
-left:50%;
-
-
-top:50%;
-
-
-transform:
-
-translate(-50%,-50%);
-
-
-
+/* NAV */
+.nav{
 display:flex;
-
-
-gap:32px;
-
-
-align-items:center;
-
-
+gap:25px;
 }
 
-
-
-nav a{
-
-
-color:white;
-
-
+.nav a{
+color:#fff;
 text-decoration:none;
-
-
 font-weight:600;
-
-
-font-size:16px;
-
-
 position:relative;
-
-
 transition:.3s;
-
-
 }
 
-
-
-nav a:hover{
-
-
+.nav a:hover{
 color:#2ea3ff;
-
-
 }
 
-
-
-nav a::after{
-
-
+.nav a::after{
 content:"";
-
-
 position:absolute;
-
-
-bottom:-8px;
-
-
+bottom:-6px;
 left:0;
-
-
 height:2px;
-
-
 width:0;
-
-
 background:#2ea3ff;
-
-
 transition:.3s;
-
-
 }
 
-
-
-nav a:hover::after{
-
-
+.nav a:hover::after{
 width:100%;
-
-
 }
 
-
-
-
-
-/* JOIN BUTTON */
-
+/* BUTTON */
 .join-btn{
-
-
-position:absolute;
-
-
-right:50px;
-
-
-top:50%;
-
-
-transform:translateY(-50%);
-
-
-
-padding:14px 30px;
-
-
+padding:12px 22px;
 border-radius:8px;
-
-
-background:
-
-linear-gradient(
-
-45deg,
-
-#005bea,
-
-#00c6fb
-
-);
-
-
-
-color:white;
-
-
+background:linear-gradient(45deg,#005bea,#00c6fb);
+color:#fff;
 text-decoration:none;
-
-
 font-weight:bold;
-
-
-transition:.35s;
-
-
-box-shadow:
-
-0 10px 30px rgba(0,120,255,.35);
-
-
+transition:.3s;
 }
-
-
 
 .join-btn:hover{
-
-
-transform:
-
-translateY(-50%)
-
-scale(1.08);
-
-
+transform:scale(1.05);
 }
 
+/* MOBILE MENU BUTTON */
+.menu-toggle{
+display:none;
+background:none;
+border:none;
+color:#fff;
+font-size:28px;
+cursor:pointer;
+}
 
-
-
-
-
-/* =====================================================
-   HERO
-   ===================================================== */
-
-
-
+/* HERO */
 .hero{
-
-
-height:100vh;
-
-
+min-height:100svh;
 display:flex;
-
-
 align-items:center;
-
-
 justify-content:center;
-
-
 text-align:center;
 
-
+padding:120px 20px 60px;
 
 background:
-
-
-linear-gradient(
-
-rgba(0,0,0,.6),
-
-rgba(0,0,0,.85)
-
-),
-
-
+linear-gradient(rgba(0,0,0,.6), rgba(0,0,0,.85)),
 url("../assets/backgrounds/home.jpg");
 
-
-
 background-size:cover;
-
-
 background-position:center;
-
-
 }
-
-
-
-.hero-content{
-
-
-animation:
-
-slideUp 1s ease;
-
-
-}
-
-
-
 
 .hero h1{
-
-
-font-size:
-
-clamp(40px,6vw,75px);
-
-
-
-text-transform:uppercase;
-
-
-letter-spacing:3px;
-
-
+font-size:clamp(2.2rem, 6vw, 4.5rem);
 }
-
-
 
 .hero p{
-
-
-margin-top:20px;
-
-
-font-size:22px;
-
-
+margin-top:15px;
+font-size:clamp(1rem, 2vw, 1.3rem);
 }
-
-
-
 
 .buttons{
-
-
-margin-top:40px;
-
-
+margin-top:30px;
+display:flex;
+flex-wrap:wrap;
+justify-content:center;
+gap:12px;
 }
-
-
 
 .buttons a{
-
-
-display:inline-block;
-
-
-margin:10px;
-
-
-padding:15px 35px;
-
-
-background:
-
-linear-gradient(
-
-45deg,
-
-#005bea,
-
-#00c6fb
-
-);
-
-
-
+padding:12px 22px;
 border-radius:8px;
-
-
-color:white;
-
-
+background:linear-gradient(45deg,#005bea,#00c6fb);
+color:#fff;
 text-decoration:none;
-
-
 font-weight:bold;
-
-
-transition:.35s;
-
-
+transition:.3s;
 }
-
-
 
 .buttons a:hover{
-
-
-transform:
-
-translateY(-6px);
-
-
+transform:translateY(-5px);
 }
 
-
-
-
-
-
-@keyframes slideUp{
-
-
-from{
-
-opacity:0;
-
-transform:translateY(50px);
-
+/* FEATURES */
+.features{
+display:grid;
+grid-template-columns:repeat(auto-fit, minmax(250px, 1fr));
+gap:25px;
+padding:80px 5%;
+max-width:1200px;
+margin:auto;
 }
-
-
-to{
-
-opacity:1;
-
-transform:translateY(0);
-
-}
-
-
-}
-
-
-
-
-
-
-/* =====================================================
-   PAGE HEADERS
-   ===================================================== */
-
-
-
-.page-hero{
-
-
-height:60vh;
-
-
-display:flex;
-
-
-justify-content:center;
-
-
-align-items:center;
-
-
-text-align:center;
-
-
-padding-top:90px;
-
-
-}
-
-
-
-.page-hero h1{
-
-
-font-size:
-
-clamp(35px,5vw,60px);
-
-
-text-transform:uppercase;
-
-
-}
-
-
-
-
-.server-bg{
-
-
-background:
-
-linear-gradient(
-
-rgba(0,0,0,.7),
-
-rgba(0,0,0,.85)
-
-),
-
-url("../assets/backgrounds/server.jpg");
-
-background-size:cover;
-
-
-}
-
-
-
-.command-bg{
-
-
-background:
-
-linear-gradient(
-
-rgba(0,0,0,.7),
-
-rgba(0,0,0,.85)
-
-),
-
-url("../assets/backgrounds/command.jpg");
-
-background-size:cover;
-
-
-}
-
-
-
-.vehicle-bg{
-
-
-background:
-
-linear-gradient(
-
-rgba(0,0,0,.7),
-
-rgba(0,0,0,.85)
-
-),
-
-url("../assets/backgrounds/vehicles.jpg");
-
-background-size:cover;
-
-
-}
-
-
-
-.contact-bg{
-
-
-background:
-
-linear-gradient(
-
-rgba(0,0,0,.7),
-
-rgba(0,0,0,.85)
-
-),
-
-url("../assets/backgrounds/contact.jpg");
-
-background-size:cover;
-
-
-}
-
-
-
-
-
-
-
-/* =====================================================
-   CONTENT
-   ===================================================== */
-
-
-
-.content{
-
-
-padding:
-
-80px 8%;
-
-
-
-line-height:1.8;
-
-
-}
-
-
-
-
-.content h2{
-
-
-color:#3aa8ff;
-
-
-font-size:32px;
-
-
-margin:
-
-35px 0 15px;
-
-
-}
-
-
-
-
-
-.content ul{
-
-
-margin-left:35px;
-
-
-}
-
-
-
-
-
-/* =====================================================
-   CARDS
-   ===================================================== */
-
-
-
-.features,
-.team-grid{
-
-
-display:flex;
-
-
-justify-content:center;
-
-
-align-items:center;
-
-
-gap:35px;
-
-
-flex-wrap:wrap;
-
-
-padding:
-
-70px 40px;
-
-
-}
-
-
-
 
 .card{
-
-
-width:320px;
-
-
-padding:35px;
-
-
-background:
-
-linear-gradient(
-
-145deg,
-
-#111d30,
-
-#070d17
-
-);
-
-
-
+padding:30px;
+background:linear-gradient(145deg,#111d30,#070d17);
+border:1px solid rgba(255,255,255,.12);
 border-radius:15px;
-
-
-
-border:
-
-1px solid rgba(255,255,255,.12);
-
-
-
 text-align:center;
-
-
-transition:.4s;
-
-
+transition:.3s;
 }
-
-
 
 .card:hover{
-
-
-transform:
-
-translateY(-12px);
-
-
+transform:translateY(-10px);
 border-color:#2ea3ff;
-
-
-
-box-shadow:
-
-0 20px 50px rgba(0,120,255,.25);
-
-
+box-shadow:0 20px 50px rgba(0,120,255,.25);
 }
-
-
-
 
 .card h2{
-
-
 color:#3aa8ff;
-
-
-margin-bottom:15px;
-
-
+margin-bottom:10px;
 }
 
-
-
-
-
-
-
-/* =====================================================
-   IMAGES
-   ===================================================== */
-
-
-.profile{
-
-
-width:160px;
-
-
-height:160px;
-
-
-border-radius:50%;
-
-
-object-fit:cover;
-
-
-border:
-
-3px solid #2ea3ff;
-
-
-}
-
-
-
-.vehicle{
-
-
-width:100%;
-
-
-height:200px;
-
-
-object-fit:contain;
-
-
-}
-
-
-
-
-
-
-/* =====================================================
-   FOOTER
-   ===================================================== */
-
-
+/* FOOTER */
 footer{
-
-
-padding:30px;
-
-
-background:#02050a;
-
-
 text-align:center;
-
-
+padding:25px;
+background:#02050a;
 }
 
+/* RESPONSIVE */
+@media (max-width:900px){
 
-
-
-
-
-
-/* =====================================================
-   MOBILE
-   ===================================================== */
-
-
-@media(max-width:950px){
-
-
-
-header{
-
-
-height:auto;
-
-
-padding:20px;
-
-
-display:flex;
-
-
+.nav{
+position:absolute;
+top:90px;
+left:0;
+width:100%;
 flex-direction:column;
-
-
-gap:20px;
-
-
+background:rgba(0,0,0,.95);
+display:none;
+padding:20px;
 }
 
-
-
-.logo{
-
-
-position:static;
-
-
-transform:none;
-
-
-}
-
-
-
-nav{
-
-
-position:static;
-
-
-transform:none;
-
-
+.nav.active{
 display:flex;
-
-
-flex-wrap:wrap;
-
-
-justify-content:center;
-
-
-gap:18px;
-
-
 }
 
-
+.menu-toggle{
+display:block;
+}
 
 .join-btn{
-
-
-position:static;
-
-
-transform:none;
-
-
-width:100%;
-
-
-text-align:center;
-
-
+display:none;
 }
-
-
-
-.hero h1{
-
-
-font-size:38px;
-
-
-}
-
-
-
-.hero p{
-
-
-font-size:17px;
-
-
-padding:0 20px;
-
-
-}
-
-
-
-.features,
-.team-grid{
-
-
-padding:40px 20px;
-
-
-}
-
-
-
-.card{
-
-
-width:100%;
-
-
-}
-
-
-
-.content{
-
-
-padding:
-
-50px 25px;
-
-
-}
-
 
 }
