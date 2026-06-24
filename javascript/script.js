@@ -1,11 +1,13 @@
-window.addEventListener("load", () => {
+document.addEventListener("DOMContentLoaded", () => {
 
+    // Smooth page fade-in (optional if you use it in CSS)
     document.body.style.opacity = "1";
 
-    /* COMMAND TEAM IMAGE SYSTEM */
+    /* =========================
+       COMMAND TEAM IMAGE SYSTEM
+       ========================= */
 
     const staffImages = {
-
         "T. Walker": "twalker.png",
         "C. White": "cwhite.png",
         "J. Johnson": "jjohnson.png",
@@ -13,22 +15,30 @@ window.addEventListener("load", () => {
         "M. Wallace": "mwallace.png",
         "M. Rainer": "mrainer.png",
         "C. Murray": "cmurray.png"
-
     };
 
-    const cards = document.querySelectorAll(".card");
+    const cards = document.querySelectorAll(".card[data-name]");
 
     cards.forEach(card => {
 
         const name = card.dataset.name;
-        const image = card.querySelector(".profile");
+        const img = card.querySelector("img.profile");
 
-        if (staffImages[name] && image) {
+        if (!name || !img) return;
 
-            image.src = "../assets/team/" + staffImages[name];
-            image.alt = name;
+        const fileName = staffImages[name];
 
+        if (!fileName) {
+            console.warn(`No image found for staff member: ${name}`);
+            return;
         }
+
+        // Auto-detect correct base path depending on page location
+        const isInPagesFolder = window.location.pathname.includes("/pages/");
+        const basePath = isInPagesFolder ? "../assets/team/" : "assets/team/";
+
+        img.src = basePath + fileName;
+        img.alt = name;
 
     });
 
